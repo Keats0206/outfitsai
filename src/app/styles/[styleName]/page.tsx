@@ -6,7 +6,13 @@ import HeaderSection from '@/components/HeaderSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
-const ClothingItem = ({ imageUrl, name, price }) => (
+interface ClothingItemProps {
+  imageUrl: string;
+  name: string;
+  price: number;
+}
+
+const ClothingItem: React.FC<ClothingItemProps> = ({ imageUrl, name, price }) => (
   <Card className="max-w-sm">
     <CardHeader>
       <img src={imageUrl} alt={name} className="w-full h-48 object-cover" />
@@ -20,8 +26,6 @@ const ClothingItem = ({ imageUrl, name, price }) => (
     </CardFooter>
   </Card>
 );
-
-
 
 const StylePage = () => {
   // Mock data store - in a real application, this would be fetched from an API or database

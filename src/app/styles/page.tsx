@@ -4,8 +4,15 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import Link from 'next/link';
 import HeaderSection from '@/components/HeaderSection';
 
+// Define the props type
+interface StyleCardProps {
+  imageUrl: string;
+  title: string;
+  description: string;
+}
+
 // StyleCard component
-const StyleCard = ({ imageUrl, title, description }) => (
+const StyleCard = ({ imageUrl, title, description }: StyleCardProps) => (
   <Card className="max-w-sm">
     <CardHeader>
       <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />

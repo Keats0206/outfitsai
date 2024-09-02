@@ -8,6 +8,7 @@ import { getErrorRedirect } from '@/utils/helpers';
 import { User } from '@supabase/supabase-js';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState } from 'react';
+import cn from 'classnames'; // Add this import statement
 
 type Subscription = Tables<'subscriptions'>;
 type Product = Tables<'products'>;
@@ -181,7 +182,6 @@ export default function Pricing({ user, products, subscription }: Props) {
                     </p>
                     <Button
                       type="button"
-                      loading={priceIdLoading === price.id}
                       onClick={() => handleStripeCheckout(price)}
                     >
                       {subscription ? 'Manage' : 'Subscribe'}
